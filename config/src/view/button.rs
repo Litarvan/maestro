@@ -1,3 +1,5 @@
+use std::process;
+
 use crate::ConfigEnv;
 
 /// Trait representing a button on the interface.
@@ -17,7 +19,7 @@ impl Button for EnterButton {
 	}
 
 	fn on_action(&mut self, env: &mut ConfigEnv) {
-		env.push_menu();
+		env.view.push_menu();
 	}
 }
 
@@ -30,7 +32,7 @@ impl Button for BackButton {
 	}
 
 	fn on_action(&mut self, env: &mut ConfigEnv) {
-		env.pop_menu();
+		env.view.pop_menu();
 	}
 }
 
@@ -55,7 +57,8 @@ impl Button for ExitButton {
 		"Exit".to_string()
 	}
 
-	fn on_action(&mut self, _env: &mut ConfigEnv) {
-		crate::exit();
+	fn on_action(&mut self, env: &mut ConfigEnv) {
+		env.view.exit();
+        process::exit(1);
 	}
 }
