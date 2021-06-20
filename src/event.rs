@@ -12,7 +12,7 @@ use crate::util::lock::mutex::*;
 use crate::util;
 
 /// The list of interrupt error messages ordered by index of the corresponding interrupt vector.
-#[cfg(config_general_arch = "x86")]
+#[cfg(any(config_general_arch = "x86", config_general_arch = "x86_64"))]
 static ERROR_MESSAGES: &[&str] = &[
 	"Divide-by-zero Error",
 	"Debug",

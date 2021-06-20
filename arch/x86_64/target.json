@@ -1,0 +1,18 @@
+{
+	"arch": "x86_64",
+	"data-layout": "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128",
+	"disable-redzone": true,
+	"eliminate-frame-pointer": false,
+	"executables": true,
+	"features": "-mmx,-sse,+soft-float",
+	"linker": "x86_64-elf-ld",
+	"linker-flavor": "ld",
+	"llvm-target": "x86_64-unknown-none",
+	"morestack": false,
+	"no-compiler-rt": true,
+	"os": "none",
+	"panic-strategy": "abort",
+	"target-c-int-width": "32",
+	"target-endian": "little",
+	"target-pointer-width": "64"
+}

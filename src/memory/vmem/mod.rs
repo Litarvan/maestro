@@ -3,7 +3,7 @@
 
 // TODO Make this file fully cross-platform
 
-#[cfg(config_general_arch = "x86")]
+#[cfg(any(config_general_arch = "x86", config_general_arch = "x86_64"))]
 pub mod x86;
 
 use core::ffi::c_void;
